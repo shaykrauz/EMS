@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee mange</title>
+  <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+
+  <!-- App Templates -->
+
+    <script id="empApp" type="text/x-handlebars-template">
+      <header>
+        <div class="emp-app">
+          <h1>Employee Management System</h1>
+          <div class="input">
+              <input type="text" id="empName" placeholder="Employee Name"/>
+              <input type="text" id="empSkill" placeholder="Employee Skill"/>
+            <select id="empTitle">
+                <option value="Developer" selected="selected">Developer</option>
+                <option value="Manager">Manager</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Designer">Designer</option>
+                <option value="CEO">CEO</option>
+            </select>
+            <br><br>
+            <button id="add" >Add Emploee</button>
+         </div>
+      </div>
+      </header>
+      <main>
+        <h3 class="headTitle">Employees List:</h3>
+        <div class="list">
+
+        </div>
+      </main>
+    </script>
+
+    <script id="empList" type="text/x-handlebars-template">
+        <div class="emp-list">
+            <ul>
+            </ul>
+        </div>
+    </script>
+
+    <script id="empItem" type="text/x-handlebars-template">
+        <div class="emp-item">
+            <hr>
+            <p><b>ID: </b>{{labelId}}</p>
+            <p><b>Name: </b>{{labelName}}</p>
+            <p><b>Skill: </b>{{labelSkill}}</p>
+            <p><b>Title: </b>{{labelTitle}}</p>
+            <p><b>Last Check-in: </b>{{labelCheck}}</p>
+        </div>
+        <div class="empButtons"></div>
+
+
+    </script>
+
+  <!-- End App Templates -->
+</head>
+<body>
+
+  <script src="./lib/handlebars.min-latest.js"></script>
+  <scrip src="./src/TestSuite.js"></scrip>
+  <script src="./src/EmpItem.js"></script>
+  <script src="./src/EmpList.js"></script>
+  <script src="./src/EmpApp.js"></script>
+  <script src="./src/BtnMaker.js"></script>
+
+  </script>
+  <script>
+
+      var app = new EmpApp();
+      var view = new EmpAppView(app);
+      document.body.appendChild(view.html);
+
+  </script>
+</body>
+</html>
