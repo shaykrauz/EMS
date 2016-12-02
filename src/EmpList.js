@@ -2,12 +2,9 @@ function EmpList(list){
 	this.empItemsList = list || [];
 }
 
-
 EmpList.prototype.addItem = function(empItem){
 	this.empItemsList.push(empItem);
 };
-
-
 
 function EmpListView(empList){
 	var template,

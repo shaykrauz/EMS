@@ -5,23 +5,8 @@ function EmpApp(){
 	this.newItemSkill;
 	this.newItemTitle;
 	this.checkIn = "--";
-
 }
 
-EmpApp.prototype.empTime = function(){
-	var date = new Date();
-	var hours = date.getHours();
-	var minutes = date.getMinutes();
-	var seconds = date.getSeconds();
-	var arr = [hours, minutes, seconds].map(function(num) {
-		return num < 10 ? '0' + num : String(num);
-	});
-	hours = arr[0];
-	minutes = arr[1];
-	seconds = arr[2];
-
-	this.checkIn = hours +":"+ minutes +":"+ seconds;
-};
 
 EmpApp.prototype.addItem = function(){
 	if (this.newItemName && this.newItemSkill && this.newItemTitle){
@@ -32,7 +17,7 @@ EmpApp.prototype.addItem = function(){
 	  this.newItemSkill = null;
 	  this.newItemTitle = null;
 		this.count++;
-		this.checkIn = null;
+		//this.checkIn = "--";
 	}
 };
 
@@ -80,13 +65,9 @@ function EmpAppView(empApp){
 	}
 
 	function onAddClick(){
-		empApp.empTime();
-		btnMaker(empApp.newItemTitle);
 		empApp.addItem();
 		render();
-
 	}
-
 	init();
 	render();
 }

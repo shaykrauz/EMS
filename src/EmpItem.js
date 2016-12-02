@@ -18,7 +18,9 @@ function EmpItemView(empItem){
 
 	function render(){
 		self.html.innerHTML = template(empItem);
-
+		//button add
+		var buttons = new BtnMaker(empItem.labelTitle);
+		self.html.querySelector(".empButtons").appendChild(buttons.html);
 	}
 
 	init();

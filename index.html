@@ -6,9 +6,7 @@
   <title>Employee mange</title>
   <link rel="stylesheet" type="text/css" href="styles/main.css">
 
-
   <!-- App Templates -->
-
     <script id="empApp" type="text/x-handlebars-template">
       <header>
         <div class="emp-app">
@@ -51,8 +49,8 @@
             <p><b>Skill: </b>{{labelSkill}}</p>
             <p><b>Title: </b>{{labelTitle}}</p>
             <p><b>Last Check-in: </b>{{labelCheck}}</p>
+            <div class="empButtons"></div>
         </div>
-        <div class="empButtons"></div>
 
 
     </script>
@@ -62,13 +60,13 @@
 <body>
 
   <script src="./lib/handlebars.min-latest.js"></script>
+  <script src="./lib/jquery-3.1.1.js"></script>
   <scrip src="./src/TestSuite.js"></scrip>
   <script src="./src/EmpItem.js"></script>
   <script src="./src/EmpList.js"></script>
   <script src="./src/EmpApp.js"></script>
   <script src="./src/BtnMaker.js"></script>
 
-  </script>
   <script>
 
       var app = new EmpApp();
